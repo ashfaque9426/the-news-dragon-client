@@ -16,7 +16,7 @@ const Header = () => {
                     <p className='text-secondary'><small>Journalism Without Fear or Favour</small></p>
                     <p>{moment().format("dddd, MMMM D, YYYY")}</p>
                 </div>
-                <div className='d-flex bg-secondary mb-2 px-2 py-3'>
+                <div className='d-flex border rounded-3 mb-2 px-2 py-3'>
                     <Button variant="danger">Latest</Button>
                     <Marquee className='text-dark fw-bold' pauseOnHover={true} speed={50}>
                         I can be a React component, multiple React components, or just some text.
