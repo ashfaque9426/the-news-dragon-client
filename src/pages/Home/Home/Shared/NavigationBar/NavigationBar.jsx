@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Nav } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../../../../providers/AuthProvider';
 import { useContext } from 'react';
@@ -16,15 +16,15 @@ const NavigationBar = () => {
     }
 
     return (
-        <Container>
+        <Container className='mb-4'>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Link to='/'>Home</Link>
-                            <Nav.Link href="#pricing">About</Nav.Link>
-                            <Nav.Link href="#pricing">Career</Nav.Link>
+                        <Nav className="mx-auto d-flex gap-3">
+                            <NavLink className={({isActive}) => isActive? 'text-decoration-underline text-primary' : 'text-decoration-none text-secondary'} to='/'>Home</NavLink>
+                            <NavLink className={({isActive}) => isActive? 'text-decoration-underline text-primary' : 'text-decoration-none text-secondary'} to='/about'>About</NavLink>
+                            <NavLink className={({isActive}) => isActive? 'text-decoration-underline text-primary' : 'text-decoration-none text-secondary'} to='/career'>Career</NavLink>
                         </Nav>
                         <Nav className='d-flex gap-3 align-items-center'>
                             {

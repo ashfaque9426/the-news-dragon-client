@@ -9,6 +9,8 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../pages/Home/Home/Shared/Terms/Terms";
+import About from "../pages/About/About";
+import Career from "../pages/Career/Career";
 
 
 const router = createBrowserRouter([
@@ -19,7 +21,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Navigate to='/category/0' />,
-                loader: () => fetch(`http://localhost:5000/news`)
             },
             {
                 path: 'login',
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
             {
                 path: 'terms',
                 element: <Terms />
+            },
+            {
+                path: 'about',
+                element: <About />
+            },
+            {
+                path: 'career',
+                element: <Career />
             }
         ]
     },
